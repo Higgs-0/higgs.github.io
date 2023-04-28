@@ -1,0 +1,29 @@
+# 设置跳转301（非永久重定向）
+## 方法1：rewrite
+```
+    location /t1/res/oss/1.mp4 {
+        rewrite (.*) /t1/res/1.mp4 permanent;
+    }
+```
+
+## 方法2：return 301
+```
+    location /t1/res/oss/2.mp4 {
+        return 301 "/t1/res/1.mp4";
+    }
+```
+
+# 设置跳转302（非永久重定向）
+## 方法1：rewrite
+```
+    location /t1/res/oss/1.mp4 {
+        rewrite (.*) /t1/res/1.mp4 redirect;
+    }
+```
+
+## 方法2：return 302
+```
+    location /t1/res/oss/2.mp4 {
+        return 302 "/t1/res/1.mp4";
+    }
+```
